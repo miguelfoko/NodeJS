@@ -12,8 +12,8 @@ app.post('/charge', function (req, res) {
 	var amount=parseInt(req.body.amount);
 	var carNumber=req.body.userCard;
 	var userMail=req.body.userMail;
-	//var stripe = require("stripe")("**********");
-	var stripe = require("stripe")("sk_test_6OG2V0BYqxjki7qlaawPUMH4");
+	var secret=req.body.secret;
+	var stripe = require("stripe")(secret);
  
 	/* stripe.transfers.create({
 	  amount: 400,
